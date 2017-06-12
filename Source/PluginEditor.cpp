@@ -46,8 +46,8 @@ StereoDelayAudioProcessorEditor::StereoDelayAudioProcessorEditor (StereoDelayAud
 
     addAndMakeVisible (label = new Label ("new label",
                                           TRANS("Delay Time")));
-    label->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label->setJustificationType (Justification::centredLeft);
+    label->setFont (Font ("Rockwell", 16.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label->setJustificationType (Justification::centred);
     label->setEditable (false, false, false);
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
@@ -83,7 +83,7 @@ void StereoDelayAudioProcessorEditor::paint (Graphics& g)
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff293439));
+    g.fillAll (Colour (0xff323e44));
 
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
@@ -96,7 +96,7 @@ void StereoDelayAudioProcessorEditor::resized()
 
     BypassBtn->setBounds ((getWidth() / 2) + -75, 240, 150, 24);
     DelayTimeSld->setBounds (0, 72, proportionOfWidth (1.0000f), 24);
-    label->setBounds (0, 48, proportionOfWidth (1.0000f), 24);
+    label->setBounds (0, 45, proportionOfWidth (1.0000f), 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -152,7 +152,7 @@ BEGIN_JUCER_METADATA
                  variableInitialisers="AudioProcessorEditor(ownerProc), processor(ownerProc)"
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="1" initialWidth="200" initialHeight="350">
-  <BACKGROUND backgroundColour="ff293439"/>
+  <BACKGROUND backgroundColour="ff323e44"/>
   <TEXTBUTTON name="Bypass Button" id="ba2c685e2aad071b" memberName="BypassBtn"
               virtualName="" explicitFocusOrder="0" pos="-75C 240 150 24" bgColOff="ff307085"
               buttonText="Bypass" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
@@ -162,10 +162,10 @@ BEGIN_JUCER_METADATA
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"
           needsCallback="1"/>
   <LABEL name="new label" id="a4c72bdb57082eb4" memberName="label" virtualName=""
-         explicitFocusOrder="0" pos="0 48 100% 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="0 45 100% 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Delay Time" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="15"
-         kerning="0" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Rockwell" fontsize="16" kerning="0"
+         bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -11,7 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-
+#include "StereoDelayCtrl.h"
 
 //==============================================================================
 /**
@@ -77,8 +77,9 @@ public:
 	#define PARAM_DELAY_TIME "DelayTime"
 
 private:
-	/// True if we have a major change in our parameters
-	bool mMajorParamChange;
+
+	CStereoDelayCtrl mStereoDelayCtrl;		/// The Stereo Delay control
+	bool mMajorParamChange;					/// True if we have a major change in our parameters
 
 	/// Tree used to manage AudioProcessor's entire state
 	ScopedPointer<AudioProcessorValueTreeState> mState;

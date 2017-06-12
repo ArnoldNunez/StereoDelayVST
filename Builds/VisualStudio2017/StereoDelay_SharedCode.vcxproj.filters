@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="StereoDelay\Source\StereoDelayCtrl">
+      <UniqueIdentifier>{4E00D8FA-EC70-E161-C420-59318FDF4B30}</UniqueIdentifier>
+    </Filter>
     <Filter Include="StereoDelay\Source">
       <UniqueIdentifier>{BFEC3CCD-F393-4147-B58C-E9C7205808C0}</UniqueIdentifier>
     </Filter>
@@ -373,6 +376,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\StereoDelayCtrl.cpp">
+      <Filter>StereoDelay\Source\StereoDelayCtrl</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp">
       <Filter>StereoDelay\Source</Filter>
     </ClCompile>
@@ -2154,6 +2160,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\StereoDelayCtrl.h">
+      <Filter>StereoDelay\Source\StereoDelayCtrl</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\PluginProcessor.h">
       <Filter>StereoDelay\Source</Filter>
     </ClInclude>

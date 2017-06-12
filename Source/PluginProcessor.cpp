@@ -43,7 +43,7 @@ StereoDelayAudioProcessor::StereoDelayAudioProcessor()
 
 	// Add any controls you want to trigger a deeper update
 	// timed with the call to process
-	//mState->addParameterListener(PARAM_DELAY_TIME, this);
+	mState->addParameterListener(PARAM_DELAY_TIME, this);
 
 	// Start with a deeper update
 	mMajorParamChange = true;	
@@ -169,6 +169,8 @@ void StereoDelayAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuf
 	else
 	{
 		// Not bypassed - do processing!
+		float** pChannelData = buffer.getArrayOfWritePointers();
+		mStereoDelayCtrl.Process(pChannelData[0], pChannelData[1], buffer.getNumSamples());
 	}
 }
 

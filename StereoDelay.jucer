@@ -15,6 +15,12 @@
               companyEmail="contact@arnoldnunez.com">
   <MAINGROUP id="Nz0AOn" name="StereoDelay">
     <GROUP id="{EDD36E4A-141D-5046-BAC4-6B750A07FB57}" name="Source">
+      <GROUP id="{AA72B93B-19D4-1578-CD4A-9784B21AF72E}" name="StereoDelayCtrl">
+        <FILE id="rnppFb" name="StereoDelayCtrl.cpp" compile="1" resource="0"
+              file="Source/StereoDelayCtrl.cpp"/>
+        <FILE id="xgG3Oq" name="StereoDelayCtrl.h" compile="0" resource="0"
+              file="Source/StereoDelayCtrl.h"/>
+      </GROUP>
       <FILE id="A8FQkA" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="uiwLm4" name="PluginProcessor.h" compile="0" resource="0"
@@ -50,9 +56,9 @@
     <VS2017 targetFolder="Builds/VisualStudio2017">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="StereoDelay"/>
+                       isDebug="1" optimisation="1" targetName="StereoDelay" headerPath="..\..\Source\StereoDelayCtrl;"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="StereoDelay"/>
+                       isDebug="0" optimisation="3" targetName="StereoDelay" headerPath="..\..\Source\StereoDelayCtrl;"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="F:/Users/protoman/Downloads/Software/JUCE/modules"/>
