@@ -35,7 +35,7 @@ StereoDelayAudioProcessor::StereoDelayAudioProcessor()
 	mState->createAndAddParameter(PARAM_MASTERBYPASS, "Bypass", "", NormalisableRange<float>(0, 1, 1), 0,
 		GetBypassStr, nullptr);
 
-	mState->createAndAddParameter(PARAM_DELAY_TIME, "DelayTime", "", NormalisableRange<float>(0, 1, 0.5f),
+	mState->createAndAddParameter(PARAM_DELAY_TIME, "DelayTime", "", NormalisableRange<float>(0.01f, 1, 0.01f),
 		0, nullptr, nullptr);
 
 	// Now create the actual ValueTree

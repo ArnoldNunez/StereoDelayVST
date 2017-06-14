@@ -49,10 +49,10 @@ public:
 private:
 
 	double mDelayTime;		///< The length of the delay (sec)
-	int mQueSize;			///< Max possible delay * 2 (Samples)
+	const int mQueSize;		///< Max possible delay * 2 (Samples)
 	int mWriteLoc;			///< Buffer write location
 	int mReadLoc;			///< Buffer read location
 	std::vector<float> mQue;///< The buffer of audio samples
-	int mSampleRate;		///< The sampling rate of the audio input
+	int mSampleRate;		///< The sampling rate of the audio input (Hz)
 };
 
