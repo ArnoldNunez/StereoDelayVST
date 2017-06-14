@@ -69,9 +69,9 @@ void CStereoDelayCtrl::SetDelayTime(double time, const int sampleRate)
 
 	// Adjust other parameters
 	mSampleRate = sampleRate;
-	mQue.resize(mQueSize);	// Resize fill with zeros for us
+	mQue.resize(mQueSize);	// Resize fills que with zeros for us
 
-	/** TODO: Reset read and write locations? */
+	// Reset read and write locations
 	mReadLoc = 0;
 	mWriteLoc = 0;
 }
