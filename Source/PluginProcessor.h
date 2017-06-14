@@ -71,6 +71,14 @@ public:
 	void parameterChanged(const String& parameterID, float newValue) override;
 
 
+	/** Getter for the state value tree
+	 * Might be needed for custon display updates
+	 * outside our PluginProcessor
+	 * \return mState Reference to the processor state value tree
+	 */
+	AudioProcessorValueTreeState& GetState() { return *mState; }
+
+
 	/// Parameters for user parameter support
 	#define PARAM_SETNAME "ParamSetName"
 	#define PARAM_MASTERBYPASS "Bypass"

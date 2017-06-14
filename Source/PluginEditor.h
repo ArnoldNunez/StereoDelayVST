@@ -62,6 +62,11 @@ private:
 		/// The Audio processor associated with this editor
 		StereoDelayAudioProcessor& processor;
 
+		/// Processor state attachments for gui components
+		ScopedPointer<AudioProcessorValueTreeState::ButtonAttachment> mBypassAttachment;
+		ScopedPointer<AudioProcessorValueTreeState::SliderAttachment> mDelayAttachment;
+
+
     //[/UserVariables]
 
     //==============================================================================

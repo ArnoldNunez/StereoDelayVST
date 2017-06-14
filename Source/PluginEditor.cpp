@@ -60,12 +60,30 @@ StereoDelayAudioProcessorEditor::StereoDelayAudioProcessorEditor (StereoDelayAud
 
 
     //[Constructor] You can add your own custom stuff here..
+
+	/// Set the bypass button to toggle
+	BypassBtn->setClickingTogglesState(true);
+
+	/// Attach the processor state to the gui buttons
+	mBypassAttachment = new AudioProcessorValueTreeState::ButtonAttachment(processor.GetState(),
+		PARAM_MASTERBYPASS, *BypassBtn);
+	mDelayAttachment = new AudioProcessorValueTreeState::SliderAttachment(processor.GetState(),
+		PARAM_DELAY_TIME, *DelayTimeSld);
+
+	/// Starts time with interval of 200ms
+	//startTimer(200);
+
     //[/Constructor]
 }
 
 StereoDelayAudioProcessorEditor::~StereoDelayAudioProcessorEditor()
 {
     //[Destructor_pre]. You can add your own custom destruction code here..
+
+	/// Destroy button attachments before buttons to avoid crashes
+	mDelayAttachment = nullptr;
+	mBypassAttachment = nullptr;
+
     //[/Destructor_pre]
 
     BypassBtn = nullptr;

@@ -6,8 +6,10 @@
  * \brief Class for implementing stereo delay audio processing
  */
 
-
 #pragma once
+
+#include <vector>
+
 class CStereoDelayCtrl
 {
 public:
@@ -19,8 +21,9 @@ public:
 	CStereoDelayCtrl(const CStereoDelayCtrl&) = delete;
 
 	/** Setter for the length of the delay
-	 * \param time The length of the delay (ms) */
-	void SetDelayTime(double time) { mDelayTime = time; }
+	 * \param time The length of the delay (ms)
+	 * \param sampleRate The sampele rate of the audio */
+	void SetDelayTime(double time, const int sampleReate);
 
 	/** Stere Delay control.
 	 * The audio delay is created using a que with read and write
@@ -45,10 +48,11 @@ public:
 
 private:
 
-	double mDelayTime;		///< The length of the delay (ms)
+	double mDelayTime;		///< The length of the delay (sec)
 	int mQueSize;			///< Max possible delay * 2 (Samples)
 	int mWriteLoc;			///< Buffer write location
 	int mReadLoc;			///< Buffer read location
-	float* mQue;			///< The buffer of audio samples
+	std::vector<float> mQue;///< The buffer of audio samples
+	int mSampleRate;		///< The sampling rate of the audio input
 };
 

@@ -150,11 +150,11 @@ void StereoDelayAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuf
 {
 	if (mMajorParamChange)
 	{
-		/** NOTE: This is where you would put code to reconfigure buffers
+		/** 
+		 * This is where you would put code to reconfigure buffers
 		 * or other major changes 
 		 */
-		// StereoDelay.SetDelayTime( (*mState->getRawParameterValue(PARAM_DELAY_TIME)) );
-
+		mStereoDelayCtrl.SetDelayTime( (*mState->getRawParameterValue(PARAM_DELAY_TIME)), getSampleRate() );
 		mMajorParamChange = false;
 	}
 
@@ -191,12 +191,27 @@ void StereoDelayAudioProcessor::getStateInformation (MemoryBlock& destData)
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+
+	// Save UserParams/Data to memory
+	MemoryOutputStream stream(destData, false);
+	mState->state.writeToStream(stream);
 }
 
 void StereoDelayAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+
+	// Load UserParams/Data from memory
+	ValueTree tree = ValueTree::readFromData(data, sizeInBytes);
+
+	if (tree.isValid())
+	{
+		if (tree.hasType(PARAM_SETNAME))
+		{
+			mState->state = tree;
+		}
+	}
 }
 
 //==============================================================================

@@ -56,9 +56,11 @@
     <VS2017 targetFolder="Builds/VisualStudio2017">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="StereoDelay" headerPath="..\..\Source\StereoDelayCtrl;"/>
+                       isDebug="1" optimisation="1" targetName="StereoDelay" headerPath="..\..\Source\StereoDelayCtrl;"
+                       postbuildCommand="copy /Y &quot;$(TargetPath)&quot; &quot;%VSTPluginFolder%&quot;"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="StereoDelay" headerPath="..\..\Source\StereoDelayCtrl;"/>
+                       isDebug="0" optimisation="3" targetName="StereoDelay" headerPath="..\..\Source\StereoDelayCtrl;"
+                       postbuildCommand="copy /Y &quot;$(TargetPath)&quot; &quot;%VSTPluginFolder%&quot;"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="F:/Users/protoman/Downloads/Software/JUCE/modules"/>
